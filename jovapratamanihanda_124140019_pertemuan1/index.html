@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini POS - Kasir Kantin Kampus</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Kasir Kantin</h1>
+    <p>Mini POS &middot; Jova Pratama Nihanda &middot; 124140019</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="judul-form">
+      <h2 id="judul-form">Tambah barang</h2>
+      <form id="form-barang" novalidate>
+        <div class="field">
+          <label for="nama">Nama barang</label>
+          <input type="text" id="nama" placeholder="Contoh: Buku Tulis" autocomplete="off">
+          <p class="error" id="error-nama" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="harga">Harga satuan (Rp)</label>
+          <input type="number" id="harga" placeholder="Contoh: 3500" inputmode="numeric">
+          <p class="error" id="error-harga" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="qty">Jumlah</label>
+          <input type="number" id="qty" placeholder="Contoh: 2" inputmode="numeric">
+          <p class="error" id="error-qty" role="alert"></p>
+        </div>
+        <button type="submit" class="btn primary">Tambah ke keranjang</button>
+      </form>
+    </section>
+
+    <section class="panel cart" aria-labelledby="judul-keranjang">
+      <h2 id="judul-keranjang">Keranjang belanja</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>No</th><th>Nama Barang</th><th class="num">Harga Satuan</th>
+              <th class="num">Qty</th><th class="num">Subtotal</th><th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="isi-keranjang"></tbody>
+        </table>
+      </div>
+      <p id="keranjang-kosong" class="empty">Keranjang masih kosong. Tambahkan barang lewat form di samping.</p>
+    </section>
+
+    <section class="panel receipt" aria-labelledby="judul-ringkasan">
+      <h2 id="judul-ringkasan">Ringkasan pembayaran</h2>
+      <dl>
+        <div class="row"><dt>Total belanja</dt><dd id="total-belanja">Rp 0</dd></div>
+        <div class="row"><dt>Diskon <span id="info-diskon" class="hint"></span></dt><dd id="nominal-diskon">- Rp 0</dd></div>
+        <div class="row grand"><dt>Total akhir</dt><dd id="total-akhir">Rp 0</dd></div>
+      </dl>
+
+      <div class="field">
+        <label for="promo">Kode promo</label>
+        <div class="inline">
+          <input type="text" id="promo" placeholder="HEMAT10" autocomplete="off">
+          <button type="button" class="btn" id="btn-promo">Pakai</button>
+        </div>
+        <p class="msg" id="pesan-promo" role="status"></p>
+      </div>
+
+      <div class="field">
+        <label for="bayar">Uang bayar (Rp)</label>
+        <input type="number" id="bayar" placeholder="Masukkan nominal uang" inputmode="numeric">
+      </div>
+      <div class="row change"><dt>Kembalian</dt><dd id="kembalian">Rp 0</dd></div>
+      <p class="msg" id="pesan-bayar" role="status"></p>
+
+      <button type="button" class="btn danger" id="btn-reset">Transaksi baru</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

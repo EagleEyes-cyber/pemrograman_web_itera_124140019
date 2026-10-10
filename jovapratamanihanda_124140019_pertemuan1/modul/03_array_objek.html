@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latihan 3: Array & Objek</title><link rel="stylesheet" href="style.css"></head>
+<body><main><p class="nav"><a href="index.html">Daftar latihan</a></p><h1>Latihan 3: Array & Objek</h1>
+
+<section><h2>Data mahasiswa</h2>
+<button id="btn-semua" class="alt">Semua</button><button id="btn-tertinggi" class="alt">Nilai tertinggi</button><button id="btn-atas" class="alt">Di atas rata-rata</button>
+<button id="btn-asc" class="alt">Nama A-Z</button><button id="btn-desc" class="alt">Nama Z-A</button>
+<div id="info" class="out"></div>
+<table><thead><tr><th>No</th><th>Nama</th><th>NIM</th><th>Jurusan</th><th>Nilai</th><th>Aksi</th></tr></thead><tbody id="tbody"></tbody></table></section>
+<section><h2 id="judul-form">Tambah mahasiswa (Create / Update)</h2>
+<input id="f-nama" placeholder="Nama"><input id="f-nim" placeholder="NIM"><input id="f-jurusan" placeholder="Jurusan"><input id="f-nilai" type="number" placeholder="Nilai 0-100">
+<button id="btn-simpan">Simpan</button><button id="btn-batal" class="alt">Batal edit</button><div id="f-err" class="out err"></div></section>
+</main><script src="03_array_objek.js"></script></body></html>

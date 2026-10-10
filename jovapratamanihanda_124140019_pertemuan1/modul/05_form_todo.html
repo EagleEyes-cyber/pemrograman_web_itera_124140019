@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Latihan 5: Form Mahasiswa & Todo List (localStorage)</title><link rel="stylesheet" href="style.css"></head>
+<body><main><p class="nav"><a href="index.html">Daftar latihan</a></p><h1>Latihan 5: Form Mahasiswa & Todo List (localStorage)</h1>
+
+<section><h2>Tambah data mahasiswa</h2>
+<div><input id="m-nama" placeholder="Nama"><span id="e-nama" class="err"></span></div>
+<div><input id="m-nim" placeholder="NIM (9 digit)"><span id="e-nim" class="err"></span></div>
+<div><input id="m-jurusan" placeholder="Jurusan"><span id="e-jurusan" class="err"></span></div>
+<div><input id="m-nilai" type="number" placeholder="Nilai 0-100"><span id="e-nilai" class="err"></span></div>
+<button id="btn-tambah-mhs">Tambah</button>
+<table><thead><tr><th>Nama</th><th>NIM</th><th>Jurusan</th><th>Nilai</th><th>Aksi</th></tr></thead><tbody id="tbody-mhs"></tbody></table></section>
+<section><h2>Todo list</h2>
+<input id="todo-input" placeholder="Tugas baru"><button id="btn-todo">Tambah</button><span id="e-todo" class="err"></span>
+<ul id="todo-list"></ul></section>
+</main><script src="05_form_todo.js"></script></body></html>
