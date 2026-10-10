@@ -9,7 +9,7 @@
 Mini POS adalah aplikasi web kasir untuk kantin atau toko kampus. Kasir memasukkan barang belanjaan, aplikasi menghitung subtotal, total, diskon, dan kembalian secara otomatis. Isi keranjang disimpan di `localStorage` sehingga tidak hilang saat halaman di-refresh. Aplikasi ini menggabungkan tiga kompetensi praktikum: validasi form, kalkulator otomatis, dan manajemen keranjang berbasis localStorage.
 
 ## Panduan Menjalankan
-1. Clone repository: `git clone https://github.com/<username>/pemrograman_web_itera_124140019.git`
+1. Clone repository: `git clone https://github.com/EagleEyes-cyber/pemrograman_web_itera_124140019.git`
 2. Buka folder `jovapratamanihanda_124140019_pertemuan1` di VS Code.
 3. Klik kanan `index.html`, pilih **Open with Live Server** (atau buka langsung `index.html` di browser).
 
