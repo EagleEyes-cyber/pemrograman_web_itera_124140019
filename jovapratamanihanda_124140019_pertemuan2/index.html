@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KuliahKu Dashboard: dashboard personal untuk mengelola tugas dan jadwal kuliah.">
+  <title>KuliahKu Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+
+    <!-- ============ HEADER ============ -->
+    <header class="header">
+      <div>
+        <h1 id="greeting">Halo, Mahasiswa!</h1>
+        <p class="muted" id="today-date"></p>
+      </div>
+      <div class="header__right">
+        <div class="clock" id="clock" aria-live="off">00:00:00</div>
+        <button class="btn btn--ghost" id="theme-toggle" type="button">🌙 Mode Gelap</button>
+      </div>
+    </header>
+
+    <!-- ============ WIDGET ============ -->
+    <section class="widgets" aria-label="Ringkasan">
+      <article class="card" id="weather-widget"></article>
+      <article class="card" id="quote-widget"></article>
+      <article class="card" id="stats-widget"></article>
+    </section>
+
+    <div class="main-grid">
+
+      <!-- ============ TUGAS ============ -->
+      <section class="card" aria-labelledby="task-heading">
+        <div class="card__head">
+          <h2 id="task-heading">📝 Daftar Tugas</h2>
+          <button class="btn btn--ghost btn--sm" id="clear-completed" type="button">Hapus yang selesai</button>
+        </div>
+
+        <form id="task-form" class="form" autocomplete="off">
+          <h3 id="task-form-title">Tambah Tugas Baru</h3>
+          <div class="form__row">
+            <label class="field field--grow">
+              <span>Judul tugas</span>
+              <input type="text" name="title" maxlength="120" placeholder="Contoh: Laporan praktikum PAW" required>
+            </label>
+          </div>
+          <div class="form__row">
+            <label class="field field--grow">
+              <span>Mata kuliah / kegiatan</span>
+              <input type="text" name="course" list="course-options" maxlength="60" placeholder="Pilih atau ketik sendiri">
+              <datalist id="course-options"></datalist>
+            </label>
+            <label class="field">
+              <span>Deadline</span>
+              <input type="date" name="deadline" required>
+            </label>
+            <label class="field">
+              <span>Prioritas</span>
+              <select name="priority">
+                <option value="high">Tinggi</option>
+                <option value="medium" selected>Sedang</option>
+                <option value="low">Rendah</option>
+              </select>
+            </label>
+          </div>
+          <div class="form__row form__row--end">
+            <button class="btn btn--primary" id="task-submit" type="submit">＋ Tambah Tugas</button>
+            <button class="btn btn--ghost" id="task-cancel" type="button" hidden>Batal</button>
+          </div>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" id="task-filters" role="group" aria-label="Filter tugas">
+            <button type="button" class="chip is-active" data-filter="all">Semua</button>
+            <button type="button" class="chip" data-filter="active">Aktif</button>
+            <button type="button" class="chip" data-filter="done">Selesai</button>
+            <button type="button" class="chip" data-filter="overdue">Terlambat</button>
+          </div>
+          <input class="search" id="task-search" type="search" placeholder="Cari tugas…" aria-label="Cari tugas">
+        </div>
+
+        <ul class="task-list" id="task-list"></ul>
+      </section>
+
+      <!-- ============ JADWAL ============ -->
+      <section class="card" aria-labelledby="schedule-heading">
+        <div class="card__head">
+          <h2 id="schedule-heading">🗓️ Jadwal Kuliah</h2>
+        </div>
+
+        <form id="class-form" class="form" autocomplete="off">
+          <div class="form__row">
+            <label class="field field--grow">
+              <span>Mata kuliah</span>
+              <input type="text" name="course" list="course-options" maxlength="60" placeholder="Nama mata kuliah" required>
+            </label>
+          </div>
+          <div class="form__row">
+            <label class="field field--grow">
+              <span>Hari</span>
+              <select name="day" id="class-day"></select>
+            </label>
+            <label class="field">
+              <span>Mulai</span>
+              <input type="time" name="start" required>
+            </label>
+            <label class="field">
+              <span>Selesai</span>
+              <input type="time" name="end" required>
+            </label>
+          </div>
+          <div class="form__row">
+            <label class="field field--grow">
+              <span>Ruangan</span>
+              <input type="text" name="room" maxlength="40" placeholder="Contoh: Lab Komputer 2">
+            </label>
+          </div>
+          <div class="form__row form__row--end">
+            <button class="btn btn--primary" id="class-submit" type="submit">＋ Tambah Jadwal</button>
+            <button class="btn btn--ghost" id="class-cancel" type="button" hidden>Batal</button>
+          </div>
+        </form>
+
+        <ul class="schedule-list" id="schedule-list"></ul>
+      </section>
+    </div>
+
+    <footer class="footer">
+      <p class="muted small">
+        Data tersimpan otomatis di <code>localStorage</code> browser kamu ·
+        Cuaca: Open-Meteo · Kutipan: DummyJSON
+      </p>
+      <button class="btn btn--ghost btn--sm" id="reset-data" type="button">Reset data</button>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- type="module" wajib agar import/export ES6 berjalan -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
