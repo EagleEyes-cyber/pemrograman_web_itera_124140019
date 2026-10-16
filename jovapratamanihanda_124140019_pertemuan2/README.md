@@ -3,7 +3,7 @@
 **Tugas Praktikum Pertemuan 2 – JavaScript Next Gen (ES6+)**
 Praktikum Pengembangan Aplikasi Web · Teknik Informatika · ITERA
 
-- Nama: JOVA PRATAMA NIHANDA
+- Nama: Jova Pratama Nihanda
 - NIM: 124140019
 
 ---
